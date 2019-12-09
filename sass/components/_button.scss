@@ -1,0 +1,106 @@
+
+.btn {
+    &,
+    &:link,
+    &:visited {
+        color: var(--color-primary);
+        font-size: 1.4rem;
+        text-decoration: none;
+        font-weight: bold;
+        border: none;
+        border-bottom: 1px solid var(--color-primary);
+        transition: all .2s;
+        background-color: var(--color-white);
+        cursor: pointer;
+    }
+
+    &:focus {
+        outline: none;
+    }  
+}
+
+.btn-animated-1:hover {
+    transform: scale(1.1);
+    color: var(--color-grey-dark-1);
+    border-bottom: 1px solid var(--color-grey-dark-1);
+}
+
+.btn-animated-2 {
+    &:hover {
+        animation: up-down .5s infinite;
+    }
+}
+
+
+@keyframes up-down {
+    0% {
+        transform: scale(1);
+        color: var(--color-grey-dark-1);
+        border-bottom: 1px solid var(--color-grey-dark-1);
+    }
+
+    50% {
+        transform: scale(1.1);
+        color: var(--color-grey-dark-1);
+        border-bottom: 1px solid var(--color-grey-dark-1);
+    }
+
+    100% {
+        transform: scale(1);
+        color: var(--color-grey-dark-1);
+        border-bottom: 1px solid var(--color-grey-dark-1);
+    }
+}
+
+.btn-cta {
+    display: block;
+    width: 26rem;
+    height: 6rem;
+    background-image: linear-gradient(to right, var(--color-primary-light), var(--color-primary-dark));
+    color: white;
+    border-radius: 100px;
+    text-transform: uppercase;
+    position: relative;
+    font-weight: 300;
+    font-size: 1.6rem;
+
+    @include respond(tab-port){
+        width: 20rem;
+        height: 4rem;
+    }
+
+
+    .visible {
+        position: absolute;
+        top:50%;
+        left:50%;
+        transform: translate(-50% ,-50%);
+        transition: all .2s; 
+        opacity: 1;
+    }
+
+    .invisible {
+        width: fit-content;
+        position: absolute;
+        top:-30%;
+        left:50%;
+        transform: translateX(-50%);
+        transition: all .2s;
+        opacity: 0;
+    }
+
+    &:hover {
+        background-image: linear-gradient(to left, var(--color-primary-light), var(--color-primary-dark));
+    }
+
+    &:hover .invisible{
+        top: 50%;
+        opacity: 1;
+        transform: translate(-50%, -50%); 
+    }
+
+    &:hover .visible {
+        opacity: 0;
+        top: 120%;
+    }
+}

@@ -1,0 +1,98 @@
+%span-placeholder {
+    padding: 1px 5px;
+    background-color: var(--color-primary);
+    border-radius: 100px;
+    color: var(--color-white);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: -5px;
+    left: 15px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--color-white);
+    height: 8rem;
+    border-bottom: var(--soft-bottom-line);
+
+    @include respond(phone){
+        flex-wrap: wrap;
+        height: 13rem;
+    }
+
+    &__logo{
+        height: 5rem;
+        margin-left: 2rem;
+    }
+
+    &__nav {
+        display: flex;
+        align-self: stretch;
+        align-items: center;
+        flex-basis: 20rem;
+        justify-content: space-around;
+
+        & > * {
+            cursor: pointer;
+        }
+
+        & > *:hover {
+            background-color: var(--color-grey-light-2);
+        }
+
+    }  
+
+    &__nav-box {
+        span {
+            @extend %span-placeholder;
+        }
+        height: 100%;
+        padding: 2rem;
+        display: flex;
+        align-items: center;
+    }
+
+    &__icon-box {
+        position: relative;
+
+    }
+
+    &__bookmark-icon{
+        width: 2.5rem;
+        height: 2.5rem;
+        fill: var(--color-grey-dark-2);
+    }
+
+    &__chat {
+        position: relative;
+        span {
+            @extend %span-placeholder;
+        }
+        
+    }
+
+    &__chat-icon {
+        width: 2.5rem;
+        height: 2.5rem;
+        fill: var(--color-grey-dark-2)
+    }
+
+    &__nav-user {
+        display: flex;
+        align-items: center;
+        font-size: 1.2rem;
+        height: 100%;
+        padding: 1rem;
+    }
+
+    &__user-image {
+        margin-right: 5px;
+        width: 3.5rem;
+        height: 3.5rem;
+        border-radius: 50%;
+    }
+}

@@ -1,0 +1,376 @@
+
+.main-container {
+    max-width: 120rem;
+    margin: 8rem auto;
+    box-shadow:var(--box-shadow-1);
+
+    @include respond(tab-land){
+        max-width: 100%;
+        margin: 0;
+    }
+
+}
+
+.container {
+    display: flex;
+
+    @include respond(tab-port){
+        flex-direction: column;
+    }
+}
+
+.main-content {
+    flex-basis: 80%;
+    display: flex;
+    flex-direction:column;
+}
+
+.overview {
+    @include respond(tab-port){
+        .heading-primary {
+            font-size:2rem;
+            margin-right: auto;
+        }
+    }
+
+    @include respond(extra-small){
+        .heading-primary {
+            width:100%;
+            margin: 1rem 0;
+            text-align:center;
+        }
+    }
+    
+    &__images {
+        display: flex;
+    }
+
+    &__image {
+        width: 100px;
+        &--1 {
+            flex-grow: 1;
+        }
+
+        &--2 {
+            flex-grow: 1;
+        }
+
+        &--3 {
+            flex-grow: 1;
+        }
+    }
+
+    &__content {
+        display: flex;
+        align-items: center;   
+        height: 8rem;
+        padding-left: 2rem;
+        background-color: var(--color-white);
+        border-bottom: var(--soft-bottom-line);
+
+        @include respond(phone){
+            flex-wrap: wrap;
+        }
+
+        @include respond(extra-small){
+            padding-left: 0;
+            height: 10rem;
+        }
+    }
+
+    &__star {
+        margin-right: auto;
+        margin-left: 2rem;
+
+        @include respond(phone){
+            display:none;
+        }
+
+        &-icon {
+            width: 2rem;
+            height: 2rem;
+            fill: var(--color-primary);
+
+            @include respond(phone){
+                width: 1.5rem;
+                height: 1.5rem;
+            }
+        }
+
+        @include respond(phone){
+            margin-left: 1rem;
+        }
+    }
+
+    &__location {
+        margin-right: 3rem;
+        display: flex;
+        &-icon {
+            width: 2rem;
+            height: 2rem;
+            margin: 0 5px;
+            fill: var(--color-primary);
+
+            @include respond(phone){
+                width: 1.5rem;
+                height: 1.5rem;
+            }
+        }
+
+        @include respond(extra-small){
+            width: 50%;
+            margin: 0;
+        }
+    }
+
+    &__rate {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        height: 100%;
+        width: 8rem;
+        color: var(--color-grey-light-1);
+        background-color: var(--color-primary);
+
+        @include respond(phone){
+            
+        }
+
+        @include respond(extra-small){
+            flex-direction:row;
+            height: 4rem;
+            align-items:center;
+            width: 50%;
+        }
+        
+        &-value {
+            font-size: 2.5rem;
+            margin-bottom: 5px;
+
+            @include respond(extra-small){
+                margin-right: 1rem;
+                margin-bottom: 0;
+            }
+        }
+
+        &-voters {
+            text-transform: uppercase;
+        }
+    }
+}
+
+.content {
+    display: flex;
+    padding: 7rem 4rem;
+    background-color: var(--color-grey-light-1);
+    border-bottom: var(--soft-bottom-line);
+    @include respond(tab-port){
+        padding: 4rem 2rem;
+    }
+
+    @include respond(tab-land){
+        flex-direction: column;
+    }
+
+    .features {
+        background-color: var(--color-white);
+        flex-basis: 60%;
+        box-shadow: var(--box-shadow-2);
+        padding: 4rem;
+        &__paragraph {
+            font-size: 1.4rem;
+            line-height: 1.6;
+            border-bottom: var(--soft-bottom-line);
+            p{
+                margin-bottom: 2rem;
+            }
+
+            @include respond(tab-land){
+                font-size: 1.6rem;
+            }
+        }
+
+        &__list {
+            list-style: none;
+            font-size: 1.4rem;
+            display: flex;
+            flex-wrap: wrap;
+            padding: 3rem 0;
+            border-bottom: var(--soft-bottom-line);
+
+            @include respond(tab-land){
+                font-size: 1.6rem;
+            }
+            
+        }
+
+        &__item {
+            width: 50%;
+            margin-bottom: 1.3rem;
+            display: flex;
+        }
+
+        &__item::before {
+            content:"";
+            display: inline-block;
+            width: 1.5rem;
+            height: 1.5rem;
+            background-image: url(../img/svg/chevron-small-right.svg);
+            background-size: cover;
+            background-color: unset;
+            @supports(-webkit-mask-image: url()) or (mask-image: url()) {
+                background-image: none;
+                -webkit-mask-image: url(../img/svg/chevron-small-right.svg);
+                mask-image: url(../img/svg/chevron-small-right.svg);
+                background-color: var(--color-primary);
+                -webkit-mask-size: cover;
+                mask-size: cover;
+            }
+        }
+
+        &__recommend {
+            margin-top: 3rem;
+            font-size: 1.4rem;
+            display: flex;
+            align-items: center;
+
+            &-text {
+                margin-right: auto;
+            }
+
+            &-images {
+                display: flex;
+            }
+
+            &-image {
+                width: 3.5rem;
+                height: 3.5rem;
+                box-sizing: content-box; 
+                border: 3px solid var(--color-white);
+                border-radius: 50%;
+                margin-left: -1.4rem;
+            }
+        }
+    }
+
+    .review {
+        flex-basis: 40%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+
+        @include respond(tab-land){
+            margin-top: 4rem;
+        }
+
+
+
+
+        &__container {
+            display: flex;
+            flex-direction:column;
+
+            @include respond(tab-land){
+                flex-direction: row;
+            }
+
+            @include respond(phone){
+                flex-direction: column;
+            }
+        }
+
+        &__message {
+            width: 70%;
+            margin: 0 auto;
+            margin-bottom: 2rem;
+            box-shadow: var(--box-shadow-2);
+            padding: 2rem;
+            padding-top: 2.5rem;
+            font-size: 1.4rem;
+            line-height: 1.4;
+            letter-spacing: 0.7px;
+            position: relative;
+            z-index: 10;
+
+            @include respond(tab-land){
+                height: 20rem;
+            }
+
+            @include respond(tab-port){
+                height: 25rem;
+            }
+
+            @include respond(phone){
+                height: auto;
+            }
+
+            @include respond(extra-small){
+                
+            }
+
+            &::before {
+                content: "\201C";
+                font-family: sans-serif;
+                font-size: 15rem;
+                position: absolute;
+                top:0;
+                left:-5px;
+                line-height: 0.8;
+                opacity: 0.2;
+                z-index: -1;
+            }
+        }       
+
+        &__user {
+            display: flex;
+            align-items: center;
+            margin-top: 2rem;
+            &-image {
+                width: 3.5rem;
+                height: 3.5rem;
+                border-radius: 50%;
+            }
+
+            &-description {
+                margin-right: auto;
+                margin-left: 1rem;
+               .name {
+                text-transform: uppercase;
+
+               }
+
+               .date {
+                font-size: 1.1rem;
+               }
+            }
+
+            &-score {
+                font-size: 1.8rem;
+                color: var(--color-primary);
+            }
+        }
+    }
+}
+
+.cta {
+    flex-grow: 1;
+    background-color: var(--color-white);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    @include respond(tab-port){
+        .heading-secondary{
+            font-size: 1.8rem;
+        }
+
+        @include respond(phone){
+            text-align: center;
+            line-height: 1.6;
+        }
+    }
+}
+

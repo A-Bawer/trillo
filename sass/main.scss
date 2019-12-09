@@ -1,0 +1,22 @@
+//abstracts
+@import "abstracts/variables";
+@import "abstracts/functions";
+@import "abstracts/mixins";
+
+//base 
+@import "base/base";
+@import "base/animations";
+@import "base/typography";
+@import "base/utilities";
+
+
+// components
+@import "components/search";
+@import "components/sidenav";
+@import "components/button";
+
+// layout
+@import "layout/header";
+
+// pages
+@import "pages/home";

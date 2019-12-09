@@ -1,0 +1,45 @@
+.search {
+    width: 45rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &__input{
+        width: 40rem;
+        padding: 1rem;
+        border-radius: 100px;
+        outline: none;
+        border: none;
+        background-color:var(--color-grey-light-2);
+        font-family: inherit;
+        margin-right: -3rem;
+        transition: all .2s;
+
+        @include respond(phone){
+            width: 90%;
+        }
+    }
+
+    @include respond(phone){
+        order: 1;
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+
+    &__input::-webkit-input-placeholder {
+        color: var(--color-grey-dark-3);
+    }
+
+    &__input:focus {
+        width: 100%;
+
+        @include respond(phone){
+            width: 90%;
+        }
+    }
+    
+
+    &__icon{
+        width: 1.8rem;
+        height: 1.8rem;
+    }
+}
